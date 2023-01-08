@@ -73,6 +73,7 @@ $development = @(
   'Microsoft.SQLServerManagementStudio',
   'Microsoft.Teams',
   'Miro.Miro',
+  'MongoDB.DatabaseTools',
   'Postman.Postman',
   'SublimeHQ.SublimeText.4'
 );

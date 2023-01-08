@@ -61,6 +61,7 @@ winget install --id=Microsoft.AzureStorageExplorer -e;
 winget install --id=Microsoft.SQLServerManagementStudio -e;
 winget install --id=Microsoft.Teams -e;
 winget install --id=Miro.Miro -e;
+winget install --id=MongoDB.DatabaseTools -e;
 winget install --id=Postman.Postman -e;
 winget install --id=SublimeHQ.SublimeText.4 -e;
 
