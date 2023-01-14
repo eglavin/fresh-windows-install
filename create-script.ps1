@@ -75,6 +75,7 @@ $development = @(
   'Miro.Miro',
   'MongoDB.DatabaseTools',
   'Postman.Postman',
+  'Rustlang.Rustup',
   'SublimeHQ.SublimeText.4'
 );
 
