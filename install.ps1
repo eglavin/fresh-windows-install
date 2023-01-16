@@ -31,6 +31,7 @@ winget install --id=Logitech.GHUB -e;
 winget install --id=Microsoft.PowerShell -e;
 winget install --id=NickeManarin.ScreenToGif -e;
 winget install --id=Notepad++.Notepad++ -e;
+winget install --id=NVAccess.NVDA -e;
 winget install --id=OBSProject.OBSStudio -e;
 winget install --id=PuTTY.PuTTY -e;
 winget install --id=QL-Win.QuickLook -e;
@@ -62,9 +63,11 @@ winget install --id=Microsoft.SQLServerManagementStudio -e;
 winget install --id=Microsoft.Teams -e;
 winget install --id=Miro.Miro -e;
 winget install --id=MongoDB.DatabaseTools -e;
+winget install --id=Neovim.Neovim -e;
 winget install --id=Postman.Postman -e;
 winget install --id=Rustlang.Rustup -e;
 winget install --id=SublimeHQ.SublimeText.4 -e;
+winget install --id=VSCodium.VSCodium -e;
 
 # Browsers
 winget install --id=Google.Chrome.Dev -e;

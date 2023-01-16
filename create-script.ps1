@@ -41,6 +41,7 @@ $tools = @(
   'Microsoft.PowerShell',
   'NickeManarin.ScreenToGif',
   'Notepad++.Notepad++',
+  'NVAccess.NVDA',
   'OBSProject.OBSStudio',
   'PuTTY.PuTTY',
   'QL-Win.QuickLook',
@@ -74,9 +75,11 @@ $development = @(
   'Microsoft.Teams',
   'Miro.Miro',
   'MongoDB.DatabaseTools',
+  'Neovim.Neovim',
   'Postman.Postman',
   'Rustlang.Rustup',
-  'SublimeHQ.SublimeText.4'
+  'SublimeHQ.SublimeText.4',
+  'VSCodium.VSCodium'
 );
 
 $browsers = @(
