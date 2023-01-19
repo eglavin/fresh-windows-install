@@ -7,7 +7,7 @@ param (
 
 
 $redistributes = @(
-  'Microsoft.DirectX ',
+  'Microsoft.DirectX',
   'Microsoft.VCRedist.2005.x86',
   'Microsoft.VCRedist.2005.x64',
   'Microsoft.VCRedist.2008.x86',
@@ -30,27 +30,31 @@ $info = @(
 $tools = @(
   '7zip.7zip',
   'Armin2208.WindowsAutoNightMode',
-  'Audacity.Audacity',
   'AutoHotkey.AutoHotkey',
-  'BlenderFoundation.Blender',
   'CodecGuide.K-LiteCodecPack.Standard',
   'DebaucheeOpenSourceGroup.Barrier',
   'File-New-Project.EarTrumpet',
-  'GIMP.GIMP',
+  'JanDeDobbeleer.OhMyPosh',
   'Logitech.GHUB',
   'Microsoft.PowerShell',
-  'NickeManarin.ScreenToGif',
-  'Notepad++.Notepad++',
-  'OBSProject.OBSStudio',
   'PuTTY.PuTTY',
   'QL-Win.QuickLook',
   'RARLab.WinRAR',
   'RealVNC.VNCServer',
   'RealVNC.VNCViewer',
-  'TheDocumentFoundation.LibreOffice',
   'voidtools.Everything',
   'WinDirStat.WinDirStat',
   'WiresharkFoundation.Wireshark'
+);
+
+$productivity = @(
+  'Audacity.Audacity',
+  'BlenderFoundation.Blender',
+  'GIMP.GIMP',
+  'NickeManarin.ScreenToGif',
+  'Notepad++.Notepad++',
+  'OBSProject.OBSStudio',
+  'TheDocumentFoundation.LibreOffice'
 );
 
 $security = @(
@@ -91,6 +95,7 @@ $entertainment = @(
   'Plex.Plex',
   'Sky.SkyGo',
   'Spotify.Spotify',
+  'Valve.Steam',
   'VideoLAN.VLC'
 );
 
@@ -100,6 +105,7 @@ $allLists = $(
   $('Redistributes', $redistributes),
   $('Info', $info),
   $('Tools', $tools),
+  $('Productivity', $productivity),
   $('Security', $security),
   $('Development', $development),
   $('Browsers', $browsers),
@@ -131,3 +137,17 @@ if ($ShowOutput) {
 
 # Create file with output
 $output | Out-File -FilePath .\install.ps1
+
+# Create markdown file with output
+
+$markdownOutput = New-Object System.Collections.Generic.List[System.Object];
+
+$markdownOutput.Add("# Winget install Script`n");
+
+$markdownOutput.Add("Below is a list of applications I commonly use, All apps can be installed using the included ``./install.ps1`` script.`n");
+
+$markdownOutput.Add('```ps1');
+$markdownOutput.Add($output);
+$markdownOutput.Add('```');
+
+$markdownOutput | Out-File -FilePath .\README.md

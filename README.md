@@ -1,3 +1,8 @@
+# Winget install Script
+
+Below is a list of applications I commonly use, All apps can be installed using the included `./install.ps1` script.
+
+```ps1
 # Redistributes
 winget install --id=Microsoft.DirectX -e;
 winget install --id=Microsoft.VCRedist.2005.x86 -e;
@@ -83,3 +88,4 @@ winget install --id=Spotify.Spotify -e;
 winget install --id=Valve.Steam -e;
 winget install --id=VideoLAN.VLC -e;
 
+```
