@@ -37,6 +37,7 @@ $tools = @(
   'JanDeDobbeleer.OhMyPosh',
   'Logitech.GHUB',
   'Microsoft.PowerShell',
+  'NVAccess.NVDA',
   'PuTTY.PuTTY',
   'QL-Win.QuickLook',
   'RARLab.WinRAR',
@@ -78,9 +79,11 @@ $development = @(
   'Microsoft.Teams',
   'Miro.Miro',
   'MongoDB.DatabaseTools',
+  'Neovim.Neovim',
   'Postman.Postman',
   'Rustlang.Rustup',
-  'SublimeHQ.SublimeText.4'
+  'SublimeHQ.SublimeText.4',
+  'VSCodium.VSCodium'
 );
 
 $browsers = @(
