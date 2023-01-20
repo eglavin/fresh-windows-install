@@ -1,4 +1,4 @@
-# Winget install Script
+# Winget Install Script
 
 Below is a list of applications I commonly use, All apps can be installed using the included `./install.ps1` script.
 

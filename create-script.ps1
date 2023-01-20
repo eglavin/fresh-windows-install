@@ -145,7 +145,7 @@ $output | Out-File -FilePath .\install.ps1
 
 $markdownOutput = New-Object System.Collections.Generic.List[System.Object];
 
-$markdownOutput.Add("# Winget install Script`n");
+$markdownOutput.Add("# Winget Install Script`n");
 
 $markdownOutput.Add("Below is a list of applications I commonly use, All apps can be installed using the included ``./install.ps1`` script.`n");
 
