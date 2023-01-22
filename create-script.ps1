@@ -72,6 +72,7 @@ $development = @(
   'Figma.Figma',
   'GitHub.GitHubDesktop',
   'Google.AndroidStudio',
+  'Icons8.Lunacy',
   'Microsoft.AzureCLI',
   'Microsoft.AzureFunctionsCoreTools',
   'Microsoft.AzureStorageExplorer',
