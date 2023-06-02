@@ -76,6 +76,7 @@ $development = @(
   'GitHub.GitHubDesktop',
   'Google.AndroidStudio',
   'Kubernetes.kubectl',
+  'Icons8.Lunacy',
   'Microsoft.AzureCLI',
   'Microsoft.AzureFunctionsCoreTools',
   'Microsoft.AzureStorageExplorer',

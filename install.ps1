@@ -63,6 +63,7 @@ winget install --id=Figma.Figma -e;
 winget install --id=GitHub.GitHubDesktop -e;
 winget install --id=Google.AndroidStudio -e;
 winget install --id=Kubernetes.kubectl -e;
+winget install --id=Icons8.Lunacy -e;
 winget install --id=Microsoft.AzureCLI -e;
 winget install --id=Microsoft.AzureFunctionsCoreTools -e;
 winget install --id=Microsoft.AzureStorageExplorer -e;
