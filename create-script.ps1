@@ -24,6 +24,7 @@ $info = @(
   'CPUID.HWMonitor',
   'CrystalDewWorld.CrystalDiskInfo',
   'CrystalDewWorld.CrystalDiskMark',
+  'NirSoft.BlueScreenView',
   'TechPowerUp.GPU-Z'
 );
 
@@ -34,6 +35,7 @@ $tools = @(
   'CodecGuide.K-LiteCodecPack.Standard',
   'DebaucheeOpenSourceGroup.Barrier',
   'File-New-Project.EarTrumpet',
+  'Gyan.FFmpeg',
   'JanDeDobbeleer.OhMyPosh',
   'Logitech.GHUB',
   'Microsoft.PowerShell',
@@ -69,9 +71,11 @@ $development = @(
   'AdoptOpenJDK.OpenJDK.17',
   'Atlassian.Sourcetree',
   'CoreyButler.NVMforWindows',
+  'Docker.DockerDesktop',
   'Figma.Figma',
   'GitHub.GitHubDesktop',
   'Google.AndroidStudio',
+  'Kubernetes.kubectl',
   'Microsoft.AzureCLI',
   'Microsoft.AzureFunctionsCoreTools',
   'Microsoft.AzureStorageExplorer',
@@ -81,6 +85,7 @@ $development = @(
   'MongoDB.DatabaseTools',
   'Neovim.Neovim',
   'Postman.Postman',
+  'RedHat.Podman',
   'Rustlang.Rustup',
   'SublimeHQ.SublimeText.4',
   'VSCodium.VSCodium'
