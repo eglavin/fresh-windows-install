@@ -61,6 +61,7 @@ winget install --id=Twilio.Authy -e;
 winget install --id=AdoptOpenJDK.OpenJDK.17 -e;
 winget install --id=Atlassian.Sourcetree -e;
 winget install --id=CoreyButler.NVMforWindows -e;
+winget install --id=DBBrowserForSQLite.DBBrowserForSQLite -e;
 winget install --id=Figma.Figma -e;
 winget install --id=GitHub.GitHubDesktop -e;
 winget install --id=Google.AndroidStudio -e;

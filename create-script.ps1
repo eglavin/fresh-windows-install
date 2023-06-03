@@ -69,6 +69,7 @@ $development = @(
   'AdoptOpenJDK.OpenJDK.17',
   'Atlassian.Sourcetree',
   'CoreyButler.NVMforWindows',
+  'DBBrowserForSQLite.DBBrowserForSQLite',
   'Figma.Figma',
   'GitHub.GitHubDesktop',
   'Google.AndroidStudio',
