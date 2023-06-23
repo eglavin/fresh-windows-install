@@ -69,6 +69,8 @@ $security = @(
 
 $development = @(
   'AdoptOpenJDK.OpenJDK.17',
+  'Amazon.AWSCLI',
+  'ApacheFriends.Xampp.8.2',
   'Atlassian.Sourcetree',
   'CoreyButler.NVMforWindows',
   'DBBrowserForSQLite.DBBrowserForSQLite',
@@ -102,11 +104,14 @@ $browsers = @(
 );
 
 $entertainment = @(
+  'DOSBox.DOSBox',
   'Plex.Plex',
   'Sky.SkyGo',
   'Spotify.Spotify',
   'Valve.Steam',
-  'VideoLAN.VLC'
+  'VideoLAN.VLC',
+  'Winamp.Winamp',
+  'XBMCFoundation.Kodi'
 );
 
 

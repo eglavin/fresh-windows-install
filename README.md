@@ -61,6 +61,8 @@ winget install --id=Twilio.Authy -e;
 
 # Development
 winget install --id=AdoptOpenJDK.OpenJDK.17 -e;
+winget install --id=Amazon.AWSCLI -e;
+winget install --id=ApacheFriends.Xampp.8.2 -e;
 winget install --id=Atlassian.Sourcetree -e;
 winget install --id=CoreyButler.NVMforWindows -e;
 winget install --id=DBBrowserForSQLite.DBBrowserForSQLite -e;
@@ -92,10 +94,13 @@ winget install --id=Mozilla.Firefox.DeveloperEdition -e;
 winget install --id=Mozilla.Firefox -e;
 
 # Entertainment
+winget install --id=DOSBox.DOSBox -e;
 winget install --id=Plex.Plex -e;
 winget install --id=Sky.SkyGo -e;
 winget install --id=Spotify.Spotify -e;
 winget install --id=Valve.Steam -e;
 winget install --id=VideoLAN.VLC -e;
+winget install --id=Winamp.Winamp -e;
+winget install --id=XBMCFoundation.Kodi -e;
 
 ```
