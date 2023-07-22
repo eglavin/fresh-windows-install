@@ -70,14 +70,17 @@ $security = @(
 
 $development = @(
   'AdoptOpenJDK.OpenJDK.17',
+  'Amazon.AWSCLI',
+  'ApacheFriends.Xampp.8.2',
   'Atlassian.Sourcetree',
   'CoreyButler.NVMforWindows',
+  'DBBrowserForSQLite.DBBrowserForSQLite',
   'Docker.DockerDesktop',
   'Figma.Figma',
   'GitHub.GitHubDesktop',
   'Google.AndroidStudio',
-  'Kubernetes.kubectl',
   'Icons8.Lunacy',
+  'Kubernetes.kubectl',
   'Microsoft.AzureCLI',
   'Microsoft.AzureFunctionsCoreTools',
   'Microsoft.AzureStorageExplorer',
@@ -102,11 +105,14 @@ $browsers = @(
 );
 
 $entertainment = @(
+  'DOSBox.DOSBox',
   'Plex.Plex',
   'Sky.SkyGo',
   'Spotify.Spotify',
   'Valve.Steam',
-  'VideoLAN.VLC'
+  'VideoLAN.VLC',
+  'Winamp.Winamp',
+  'XBMCFoundation.Kodi'
 );
 
 
