@@ -45,6 +45,7 @@ winget install --id=BlenderFoundation.Blender -e;
 winget install --id=GIMP.GIMP -e;
 winget install --id=NickeManarin.ScreenToGif -e;
 winget install --id=Notepad++.Notepad++ -e;
+winget install --id=Notion.Notion -e;
 winget install --id=OBSProject.OBSStudio -e;
 winget install --id=TheDocumentFoundation.LibreOffice -e;
 

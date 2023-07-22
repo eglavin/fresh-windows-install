@@ -56,6 +56,7 @@ $productivity = @(
   'GIMP.GIMP',
   'NickeManarin.ScreenToGif',
   'Notepad++.Notepad++',
+  'Notion.Notion',
   'OBSProject.OBSStudio',
   'TheDocumentFoundation.LibreOffice'
 );
