@@ -25,6 +25,7 @@ winget install --id=TechPowerUp.GPU-Z -e;
 
 # Tools
 winget install --id=7zip.7zip -e;
+winget install --id=AntibodySoftware.WizTree -e;
 winget install --id=Armin2208.WindowsAutoNightMode -e;
 winget install --id=AutoHotkey.AutoHotkey -e;
 winget install --id=CodecGuide.K-LiteCodecPack.Standard -e;
@@ -43,6 +44,7 @@ winget install --id=RealVNC.VNCViewer -e;
 winget install --id=voidtools.Everything -e;
 winget install --id=WinDirStat.WinDirStat -e;
 winget install --id=WiresharkFoundation.Wireshark -e;
+winget install --id=XnSoft.XnViewMP -e;
 
 # Productivity
 winget install --id=Audacity.Audacity -e;

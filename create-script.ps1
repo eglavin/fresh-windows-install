@@ -30,6 +30,7 @@ $info = @(
 
 $tools = @(
   '7zip.7zip',
+  'AntibodySoftware.WizTree',
   'Armin2208.WindowsAutoNightMode',
   'AutoHotkey.AutoHotkey',
   'CodecGuide.K-LiteCodecPack.Standard',
@@ -47,7 +48,8 @@ $tools = @(
   'RealVNC.VNCViewer',
   'voidtools.Everything',
   'WinDirStat.WinDirStat',
-  'WiresharkFoundation.Wireshark'
+  'WiresharkFoundation.Wireshark',
+  'XnSoft.XnViewMP'
 );
 
 $productivity = @(
