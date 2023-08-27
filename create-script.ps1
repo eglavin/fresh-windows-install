@@ -18,19 +18,20 @@ $redistributes = @(
   'Microsoft.VCRedist.2015+.x64'
 );
 
-$info = @(
+$information = @(
   'ALCPU.CoreTemp',
+  'AntibodySoftware.WizTree',
   'CPUID.CPU-Z',
   'CPUID.HWMonitor',
   'CrystalDewWorld.CrystalDiskInfo',
   'CrystalDewWorld.CrystalDiskMark',
   'NirSoft.BlueScreenView',
-  'TechPowerUp.GPU-Z'
+  'TechPowerUp.GPU-Z',
+  'WinDirStat.WinDirStat'
 );
 
 $tools = @(
   '7zip.7zip',
-  'AntibodySoftware.WizTree',
   'Armin2208.WindowsAutoNightMode',
   'AutoHotkey.AutoHotkey',
   'CodecGuide.K-LiteCodecPack.Standard',
@@ -38,8 +39,9 @@ $tools = @(
   'File-New-Project.EarTrumpet',
   'Gyan.FFmpeg',
   'JanDeDobbeleer.OhMyPosh',
-  'Logitech.GHUB',
   'Microsoft.PowerShell',
+  'Microsoft.Teams',
+  'Notepad++.Notepad++',
   'NVAccess.NVDA',
   'PuTTY.PuTTY',
   'QL-Win.QuickLook',
@@ -47,20 +49,21 @@ $tools = @(
   'RealVNC.VNCServer',
   'RealVNC.VNCViewer',
   'voidtools.Everything',
-  'WinDirStat.WinDirStat',
-  'WiresharkFoundation.Wireshark',
-  'XnSoft.XnViewMP'
+  'WiresharkFoundation.Wireshark'
 );
 
 $productivity = @(
   'Audacity.Audacity',
   'BlenderFoundation.Blender',
+  'Figma.Figma',
   'GIMP.GIMP',
+  'Icons8.Lunacy',
+  'Miro.Miro',
   'NickeManarin.ScreenToGif',
-  'Notepad++.Notepad++',
   'Notion.Notion',
   'OBSProject.OBSStudio',
-  'TheDocumentFoundation.LibreOffice'
+  'TheDocumentFoundation.LibreOffice',
+  'XnSoft.XnViewMP'
 );
 
 $security = @(
@@ -70,32 +73,30 @@ $security = @(
   'Twilio.Authy'
 );
 
-$development = @(
+$platform = @(
   'AdoptOpenJDK.OpenJDK.17',
   'Amazon.AWSCLI',
   'ApacheFriends.Xampp.8.2',
-  'Atlassian.Sourcetree',
   'CoreyButler.NVMforWindows',
-  'DBBrowserForSQLite.DBBrowserForSQLite',
   'Docker.DockerDesktop',
-  'Figma.Figma',
-  'GitHub.GitHubDesktop',
   'Google.AndroidStudio',
-  'Icons8.Lunacy',
   'Kubernetes.kubectl',
   'Microsoft.AzureCLI',
   'Microsoft.AzureFunctionsCoreTools',
   'Microsoft.AzureStorageExplorer',
   'Microsoft.SQLServerManagementStudio',
-  'Microsoft.Teams',
-  'Miro.Miro',
   'MongoDB.DatabaseTools',
-  'Neovim.Neovim',
-  'Postman.Postman',
   'RedHat.Podman',
-  'Rustlang.Rustup',
-  'SublimeHQ.SublimeText.4',
-  'VSCodium.VSCodium'
+  'Rustlang.Rustup'
+);
+
+$development = @(
+  'Atlassian.Sourcetree',
+  'DBBrowserForSQLite.DBBrowserForSQLite',
+  'Git.Git',
+  'GitHub.GitHubDesktop',
+  'Neovim.Neovim',
+  'Postman.Postman'
 );
 
 $browsers = @(
@@ -117,17 +118,23 @@ $entertainment = @(
   'XBMCFoundation.Kodi'
 );
 
+$drivers = @(
+  'Logitech.GHUB'
+);
+
 
 # Create array of arrays to hold all lists and their names
 $allLists = $(
   $('Redistributes', $redistributes),
-  $('Info', $info),
+  $('Information', $information),
   $('Tools', $tools),
   $('Productivity', $productivity),
   $('Security', $security),
+  $('Platform', $platform),
   $('Development', $development),
   $('Browsers', $browsers),
-  $('Entertainment', $entertainment)
+  $('Entertainment', $entertainment),
+  $('Drivers', $drivers)
 );
 
 
