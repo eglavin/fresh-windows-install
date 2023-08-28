@@ -79,10 +79,11 @@ winget install --id=Rustlang.Rustup -e;
 # Development
 winget install --id=Atlassian.Sourcetree -e;
 winget install --id=DBBrowserForSQLite.DBBrowserForSQLite -e;
-winget install --id=Git.Git -e;
 winget install --id=GitHub.GitHubDesktop -e;
 winget install --id=Neovim.Neovim -e;
 winget install --id=Postman.Postman -e;
+
+winget install --id=Git.Git -e -i;
 
 # Browsers
 winget install --id=Google.Chrome.Dev -e;
@@ -103,4 +104,5 @@ winget install --id=XBMCFoundation.Kodi -e;
 
 # Drivers
 winget install --id=Logitech.GHUB -e;
+winget install --id=Corsair.iCUE.4 -e;
 
