@@ -80,6 +80,7 @@ winget install --id=Microsoft.SQLServerManagementStudio -e;
 winget install --id=MongoDB.DatabaseTools -e;
 winget install --id=RedHat.Podman -e;
 winget install --id=Rustlang.Rustup -e;
+winget install --id=zig.zig -e;
 
 # Development
 winget install --id=Atlassian.Sourcetree -e;

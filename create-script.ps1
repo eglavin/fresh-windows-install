@@ -87,7 +87,8 @@ $platform = @(
   @('Microsoft.SQLServerManagementStudio'),
   @('MongoDB.DatabaseTools'),
   @('RedHat.Podman'),
-  @('Rustlang.Rustup')
+  @('Rustlang.Rustup'),
+  @('zig.zig')
 );
 
 $development = @(
