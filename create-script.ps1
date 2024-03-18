@@ -1,188 +1,385 @@
-# Script to product a list of `winget` install commands for a given list of packages
+# Script to generate a list of `winget` install commands for a given list of packages
 #
 
 param (
   [switch]$ShowOutput
 )
 
+#region Lists
 
-$redistributes = @(
-  @('Microsoft.DirectX'),
-  @('Microsoft.VCRedist.2005.x86'),
-  @('Microsoft.VCRedist.2005.x64'),
-  @('Microsoft.VCRedist.2008.x86'),
-  @('Microsoft.VCRedist.2008.x64'),
-  @('Microsoft.VCRedist.2013.x86'),
-  @('Microsoft.VCRedist.2013.x64'),
-  @('Microsoft.VCRedist.2015+.x86'),
-  @('Microsoft.VCRedist.2015+.x64')
-);
+$redistributes = @{
+  Label = "Redistributes"
+  List  = @(
+    @{
+      Id = "Microsoft.DirectX"
+    },
+    @{
+      Id = "Microsoft.VCRedist.2005.x86"
+    },
+    @{
+      Id = "Microsoft.VCRedist.2005.x64"
+    },
+    @{
+      Id = "Microsoft.VCRedist.2008.x86"
+    },
+    @{
+      Id = "Microsoft.VCRedist.2008.x64"
+    },
+    @{
+      Id = "Microsoft.VCRedist.2013.x86"
+    },
+    @{
+      Id = "Microsoft.VCRedist.2013.x64"
+    },
+    @{
+      Id = "Microsoft.VCRedist.2015+.x86"
+    },
+    @{
+      Id = "Microsoft.VCRedist.2015+.x64"
+    }
+  )
+}
 
-$information = @(
-  @('ALCPU.CoreTemp'),
-  @('AntibodySoftware.WizTree'),
-  @('CPUID.CPU-Z'),
-  @('CPUID.HWMonitor'),
-  @('CrystalDewWorld.CrystalDiskInfo'),
-  @('CrystalDewWorld.CrystalDiskMark'),
-  @('NirSoft.BlueScreenView'),
-  @('TechPowerUp.GPU-Z'),
-  @('WinDirStat.WinDirStat')
-);
+$information = @{
+  Label = "Information"
+  List  = @(
+    @{
+      Id = "ALCPU.CoreTemp"
+    },
+    @{
+      Id = "AntibodySoftware.WizTree"
+    },
+    @{
+      Id = "CPUID.CPU-Z"
+    },
+    @{
+      Id = "CPUID.HWMonitor"
+    },
+    @{
+      Id = "CrystalDewWorld.CrystalDiskInfo"
+    },
+    @{
+      Id = "CrystalDewWorld.CrystalDiskMark"
+    },
+    @{
+      Id = "NirSoft.BlueScreenView"
+    },
+    @{
+      Id = "TechPowerUp.GPU-Z"
+    },
+    @{
+      Id = "WinDirStat.WinDirStat"
+    }
+  )
+}
 
-$tools = @(
-  @('7zip.7zip'),
-  @('Armin2208.WindowsAutoNightMode'),
-  @('AutoHotkey.AutoHotkey'),
-  @('CodecGuide.K-LiteCodecPack.Standard'),
-  @('DebaucheeOpenSourceGroup.Barrier'),
-  @('File-New-Project.EarTrumpet'),
-  @('Gyan.FFmpeg'),
-  @('JanDeDobbeleer.OhMyPosh'),
-  @('Microsoft.PowerShell'),
-  @('Microsoft.Teams'),
-  @('Notepad++.Notepad++'),
-  @('NVAccess.NVDA'),
-  @('PuTTY.PuTTY'),
-  @('QL-Win.QuickLook'),
-  @('RARLab.WinRAR'),
-  @('RealVNC.VNCServer'),
-  @('RealVNC.VNCViewer'),
-  @('voidtools.Everything'),
-  @('WiresharkFoundation.Wireshark')
-);
+$tools = @{
+  Label = "Tools"
+  List  = @(
+    @{
+      Id = "7zip.7zip"
+    },
+    @{
+      Id = "Armin2208.WindowsAutoNightMode"
+    },
+    @{
+      Id = "AutoHotkey.AutoHotkey"
+    },
+    @{
+      Id = "CodecGuide.K-LiteCodecPack.Standard"
+    },
+    @{
+      Id = "DebaucheeOpenSourceGroup.Barrier"
+    },
+    @{
+      Id = "File-New-Project.EarTrumpet"
+    },
+    @{
+      Id = "Gyan.FFmpeg"
+    },
+    @{
+      Id = "JanDeDobbeleer.OhMyPosh"
+    },
+    @{
+      Id = "Microsoft.PowerShell"
+    },
+    @{
+      Id = "Microsoft.Teams"
+    },
+    @{
+      Id = "Notepad++.Notepad++"
+    },
+    @{
+      Id = "NVAccess.NVDA"
+    },
+    @{
+      Id = "PuTTY.PuTTY"
+    },
+    @{
+      Id = "QL-Win.QuickLook"
+    },
+    @{
+      Id = "RARLab.WinRAR"
+    },
+    @{
+      Id = "RealVNC.VNCServer"
+    },
+    @{
+      Id = "RealVNC.VNCViewer"
+    },
+    @{
+      Id = "voidtools.Everything"
+    },
+    @{
+      Id = "WiresharkFoundation.Wireshark"
+    }
+  )
+}
 
-$productivity = @(
-  @('Audacity.Audacity'),
-  @('BlenderFoundation.Blender'),
-  @('Figma.Figma'),
-  @('GIMP.GIMP'),
-  @('Icons8.Lunacy'),
-  @('Miro.Miro'),
-  @('NickeManarin.ScreenToGif'),
-  @('Notion.Notion'),
-  @('OBSProject.OBSStudio'),
-  @('TheDocumentFoundation.LibreOffice'),
-  @('XnSoft.XnViewMP')
-);
+$productivity = @{
+  Label = "Productivity"
+  List  = @(
+    @{
+      Id = "Audacity.Audacity"
+    },
+    @{
+      Id = "BlenderFoundation.Blender"
+    },
+    @{
+      Id = "Figma.Figma"
+    },
+    @{
+      Id = "GIMP.GIMP"
+    },
+    @{
+      Id = "Icons8.Lunacy"
+    },
+    @{
+      Id = "Miro.Miro"
+    },
+    @{
+      Id = "NickeManarin.ScreenToGif"
+    },
+    @{
+      Id = "Notion.Notion"
+    },
+    @{
+      Id = "OBSProject.OBSStudio"
+    },
+    @{
+      Id = "TheDocumentFoundation.LibreOffice"
+    },
+    @{
+      Id = "XnSoft.XnViewMP"
+    }
+  )
+}
 
-$security = @(
-  @('Bitwarden.Bitwarden'),
-  @('Malwarebytes.Malwarebytes'),
-  @('NordVPN.NordVPN'),
-  @('Twilio.Authy')
-);
+$security = @{
+  Label = "Security"
+  List  = @(
+    @{
+      Id = "Bitwarden.Bitwarden"
+    },
+    @{
+      Id = "Malwarebytes.Malwarebytes"
+    },
+    @{
+      Id = "NordVPN.NordVPN"
+    },
+    @{
+      Id = "Twilio.Authy"
+    }
+  )
+}
 
-$platform = @(
-  @('AdoptOpenJDK.OpenJDK.17'),
-  @('Amazon.AWSCLI'),
-  @('ApacheFriends.Xampp.8.2'),
-  @('CoreyButler.NVMforWindows'),
-  @('Docker.DockerDesktop'),
-  @('Google.AndroidStudio'),
-  @('Kubernetes.kubectl'),
-  @('Microsoft.AzureCLI'),
-  @('Microsoft.AzureFunctionsCoreTools'),
-  @('Microsoft.AzureStorageExplorer'),
-  @('Microsoft.SQLServerManagementStudio'),
-  @('MongoDB.DatabaseTools'),
-  @('RedHat.Podman'),
-  @('Rustlang.Rustup'),
-  @('zig.zig')
-);
+$platform = @{
+  Label = "Platform"
+  List  = @(
+    @{
+      Id = "AdoptOpenJDK.OpenJDK.17"
+    },
+    @{
+      Id = "Amazon.AWSCLI"
+    },
+    @{
+      Id = "ApacheFriends.Xampp.8.2"
+    },
+    @{
+      Id = "CoreyButler.NVMforWindows"
+    },
+    @{
+      Id = "Docker.DockerDesktop"
+    },
+    @{
+      Id = "Google.AndroidStudio"
+    },
+    @{
+      Id = "Kubernetes.kubectl"
+    },
+    @{
+      Id = "Microsoft.AzureCLI"
+    },
+    @{
+      Id = "Microsoft.AzureFunctionsCoreTools"
+    },
+    @{
+      Id = "Microsoft.AzureStorageExplorer"
+    },
+    @{
+      Id = "Microsoft.SQLServerManagementStudio"
+    },
+    @{
+      Id = "MongoDB.DatabaseTools"
+    },
+    @{
+      Id = "RedHat.Podman"
+    },
+    @{
+      Id = "Rustlang.Rustup"
+    },
+    @{
+      Id = "zig.zig"
+    }
+  )
+}
 
-$development = @(
-  @('Atlassian.Sourcetree'),
-  @('DBBrowserForSQLite.DBBrowserForSQLite'),
-  @('GitHub.GitHubDesktop'),
-  @('Neovim.Neovim'),
-  @('Postman.Postman'),
-  @(),
-  @('Git.Git', '-i')
-);
+$development = @{
+  Label = "Development"
+  List  = @(
+    @{
+      Id = "Atlassian.Sourcetree"
+    },
+    @{
+      Id = "DBBrowserForSQLite.DBBrowserForSQLite"
+    },
+    @{
+      Id = "GitHub.GitHubDesktop"
+    },
+    @{
+      Id = "Neovim.Neovim"
+    },
+    @{
+      Id = "Postman.Postman"
+    },
+    @{},
+    @{
+      Id      = "Git.Git"
+      Options = "-i"
+    }
+  )
+}
 
-$browsers = @(
-  @('Google.Chrome.Dev'),
-  @('Google.Chrome'),
-  @('Microsoft.Edge.Dev'),
-  @('Mozilla.Firefox.DeveloperEdition'),
-  @('Mozilla.Firefox')
-);
+$browsers = @{
+  Label = "Browsers"
+  List  = @(
+    @{
+      Id = "Google.Chrome.Dev"
+    },
+    @{
+      Id = "Google.Chrome"
+    },
+    @{
+      Id = "Microsoft.Edge.Dev"
+    },
+    @{
+      Id = "Mozilla.Firefox.DeveloperEdition"
+    },
+    @{
+      Id = "Mozilla.Firefox"
+    }
+  )
+}
 
-$entertainment = @(
-  @('DOSBox.DOSBox'),
-  @('Plex.Plex'),
-  @('Sky.SkyGo'),
-  @('Spotify.Spotify'),
-  @('Valve.Steam'),
-  @('VideoLAN.VLC'),
-  @('Winamp.Winamp'),
-  @('XBMCFoundation.Kodi')
-);
+$entertainment = @{
+  Label = "Entertainment"
+  List  = @(
+    @{
+      Id = "DOSBox.DOSBox"
+    },
+    @{
+      Id = "Plex.Plex"
+    },
+    @{
+      Id = "Sky.SkyGo"
+    },
+    @{
+      Id = "Spotify.Spotify"
+    },
+    @{
+      Id = "Valve.Steam"
+    },
+    @{
+      Id = "VideoLAN.VLC"
+    },
+    @{
+      Id = "Winamp.Winamp"
+    },
+    @{
+      Id = "XBMCFoundation.Kodi"
+    }
+  )
+}
 
-$drivers = @(
-  @('Logitech.GHUB'),
-  @('Corsair.iCUE.4')
-);
+$drivers = @{
+  Label = "Drivers"
+  List  = @(
+    @{
+      Id = "Logitech.GHUB"
+    },
+    @{
+      Id = "Corsair.iCUE.4"
+    }
+  )
+}
 
 
 #############################################
 
-# Create array of arrays to hold all lists and their names
-$allLists = $(
-  $('Redistributes', $redistributes),
-  $('Information', $information),
-  $('Tools', $tools),
-  $('Productivity', $productivity),
-  $('Security', $security),
-  $('Platform', $platform),
-  $('Development', $development),
-  $('Browsers', $browsers),
-  $('Entertainment', $entertainment),
-  $('Drivers', $drivers)
-);
+$allLists = @(
+  $redistributes,
+  $information,
+  $tools,
+  $productivity,
+  $security,
+  $platform,
+  $development,
+  $browsers,
+  $entertainment,
+  $drivers
+)
 
 #############################################
 
+#endregion
 
 function GetOutputFromLists {
-  param (
-    $lists
-  )
-
   # Create dynamic array to hold output. See: https://stackoverflow.com/a/33156229
-  $out = New-Object System.Collections.Generic.List[System.Object];
+  $out = New-Object System.Collections.Generic.List[System.Object]
 
-  ForEach ($list in $lists) {
-    $groupName = $list[0];
-    $groupList = $list[1];
+  ForEach ($list in $allLists) {
+    $out.Add("# $($list.Label)")
 
-    $out.Add("# $groupName");
-
-    ForEach ($group in $groupList) {
-      $appName = $group[0];
-      $appOptions = $group[1];
-
-      # If app name is null, add a blank line
-      if ($null -eq $appName) {
-        $out.Add("");
-        continue;
-      }
-
-      # Add app without options
-      if ($null -eq $appOptions) {
-        $out.Add("winget install --id=$appName -e;");
-        continue;
+    ForEach ($group in $list.List) {
+      # If app id is empty, add a blank line
+      if ($null -eq $group.Id) {
+        $out.Add("")
+        continue
       }
 
       # Add app with options
-      $out.Add("winget install --id=$appName -e $appOptions;");
+      if ($null -ne $group.Options) {
+        $out.Add("winget install --id=$($group.Id) -e $($group.Options);")
+        continue
+      }
+
+      $out.Add("winget install --id=$($group.Id) -e;")
     }
 
-    $out.Add("");
+    $out.Add("")
   }
 
-  return $out;
+  return $out
 }
 
 function WriteOutToConsole {
@@ -206,13 +403,13 @@ function WriteOutToMarkdown {
     $out
   )
 
-  $mdOutput = New-Object System.Collections.Generic.List[System.Object];
+  $mdOutput = New-Object System.Collections.Generic.List[System.Object]
 
-  $mdOutput.Add("# Winget Install Script`n");
-  $mdOutput.Add("Below is a list of applications I commonly use, All apps can be installed using the included ``./install.ps1`` script.`n");
-  $mdOutput.Add('```ps1');
-  $mdOutput.Add($out);
-  $mdOutput.Add('```');
+  $mdOutput.Add("# Winget Install Script`n")
+  $mdOutput.Add("Below is a list of applications I commonly use, All apps can be installed using the included ``./install.ps1`` script.`n")
+  $mdOutput.Add('```ps1')
+  $mdOutput.Add($out)
+  $mdOutput.Add('```')
 
   $mdOutput | Out-File -FilePath .\README.md
 }
@@ -220,11 +417,10 @@ function WriteOutToMarkdown {
 #############################################
 
 
-$output = GetOutputFromLists -lists $allLists;
+$output = GetOutputFromLists
 
 if ($ShowOutput) {
-  WriteOutToConsole -out $output;
+  WriteOutToConsole -out $output
 }
-
-WriteOutToFile -out $output;
-WriteOutToMarkdown -out $output;
+WriteOutToFile -out $output
+WriteOutToMarkdown -out $output
