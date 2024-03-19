@@ -349,55 +349,10 @@ $allLists = @(
 
 #endregion
 
-#region Functions
+# Create dynamic array to hold output. See: https://stackoverflow.com/a/33156229
+$listContent = New-Object System.Collections.Generic.List[System.Object]
 
-function GenerateListContent {
-  # Create dynamic array to hold output. See: https://stackoverflow.com/a/33156229
-  $listContent = New-Object System.Collections.Generic.List[System.Object]
-
-  ForEach ($list in $allLists) {
-    Write-Host "Processing $($list.Label):"
-    $listContent.Add("# $($list.Label)")
-
-    ForEach ($group in $list.List) {
-      # If app id is empty, add a blank line
-      if ($null -eq $group.Id) {
-        $listContent.Add("")
-        continue
-      }
-
-      if ($UpdateReadme) {
-        Write-Host "`t$($group.Id)"
-
-        # Add app with options
-        if ($null -ne $group.Options) {
-          $listContent.Add("winget install --id=$($group.Id) -e $($group.Options);")
-        }
-        else {
-          $listContent.Add("winget install --id=$($group.Id) -e;")
-        }
-      }
-
-      if ($InstallAll) {
-        Write-Host "`tInstalling: $($group.Id)"
-        winget install --id=$($group.Id) -e $($group.Options);
-      }
-    }
-
-    $listContent.Add("")
-  }
-
-  return $listContent
-}
-
-function GenerateReadmeContent {
-  param (
-    $Content
-  )
-
-  $mdContent = New-Object System.Collections.Generic.List[System.Object]
-
-  $mdContent.Add(@'
+$listContent.Add(@'
 # Winget Install Script
 
 Below is a list of applications I commonly use, this readme is designed so I can grab any item on the list and just copy and paste the command into the cli to install the application.
@@ -416,17 +371,46 @@ This README can be updated with the `-UpdateReadme` flag:
 
 '@)
 
-  $mdContent.Add('```ps1')
-  $mdContent.Add($Content)
-  $mdContent.Add('```')
+ForEach ($list in $allLists) {
+  Write-Host "Processing $($list.Label):"
 
-  return $mdContent
+  $listContent.Add(@"
+## $($list.Label)
+
+``````ps1
+"@)
+
+  ForEach ($group in $list.List) {
+    # If app id is empty, add a blank line
+    if ($null -eq $group.Id) {
+      $listContent.Add("")
+      continue
+    }
+
+    if ($UpdateReadme) {
+      Write-Host "`t$($group.Id)"
+
+      # Add app with options
+      if ($null -ne $group.Options) {
+        $listContent.Add("winget install --id=$($group.Id) -e $($group.Options);")
+      }
+      else {
+        $listContent.Add("winget install --id=$($group.Id) -e;")
+      }
+    }
+
+    if ($InstallAll) {
+      Write-Host "`tInstalling: $($group.Id)"
+      winget install --id=$($group.Id) -e $($group.Options);
+    }
+  }
+
+  $listContent.Add(@"
+``````
+
+"@)
 }
 
-#endregion
-
-$output = GenerateListContent
-
 if ($UpdateReadme) {
-  GenerateReadmeContent -Content $output | Out-File -FilePath .\README.md
+  $listContent | Out-File -FilePath .\README.md
 }
