@@ -73,6 +73,9 @@ winget install --id=WiresharkFoundation.Wireshark -e;
 ### Productivity
 
 ```ps1
+winget install --name="Affinity Photo 2" -e;
+winget install --name="Affinity Designer 2" -e;
+winget install --name="Affinity Publisher 2" -e;
 winget install --id=Audacity.Audacity -e;
 winget install --id=BlenderFoundation.Blender -e;
 winget install --id=Figma.Figma -e;

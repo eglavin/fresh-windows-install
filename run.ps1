@@ -141,6 +141,15 @@ $productivity = @{
   Label = "Productivity"
   List  = @(
     @{
+      Name = "Affinity Photo 2"
+    },
+    @{
+      Name = "Affinity Designer 2"
+    },
+    @{
+      Name = "Affinity Publisher 2"
+    },
+    @{
       Id = "Audacity.Audacity"
     },
     @{
@@ -386,7 +395,7 @@ ForEach ($list in $allLists) {
 
   ForEach ($group in $list.List) {
     # If app id is empty, add a blank line
-    if ($null -eq $group.Id) {
+    if ($null -eq $group.Id -and $null -eq $group.Name) {
       $listContent.Add("")
       continue
     }
@@ -394,13 +403,23 @@ ForEach ($list in $allLists) {
     if ($UpdateReadme) {
       Write-Host "`t$($group.Id)"
 
-      # Add app with options
+      $installScript = "winget install "
+
+      # Add by id
+      if ($null -ne $group.Id) {
+        $installScript += "--id=$($group.Id) -e"
+      }
+      # or add by name
+      elseif ($null -ne $group.Name) {
+        $installScript += "--name=`"$($group.Name)`" -e"
+      }
+
+      # Add options
       if ($null -ne $group.Options) {
-        $listContent.Add("winget install --id=$($group.Id) -e $($group.Options);")
+        $installScript += " $($group.Options)"
       }
-      else {
-        $listContent.Add("winget install --id=$($group.Id) -e;")
-      }
+
+      $listContent.Add($installScript + ";")
     }
 
     if ($InstallAll) {
