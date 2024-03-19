@@ -428,5 +428,5 @@ This README can be updated with the `-UpdateReadme` flag:
 $output = GenerateListContent
 
 if ($UpdateReadme) {
-  GenerateReadmeContent -content $output | Out-File -FilePath .\README.md
+  GenerateReadmeContent -Content $output | Out-File -FilePath .\README.md
 }
