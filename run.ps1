@@ -351,7 +351,7 @@ $allLists = @(
 
 #region Functions
 
-function GenerateList {
+function GenerateListContent {
   # Create dynamic array to hold output. See: https://stackoverflow.com/a/33156229
   $listContent = New-Object System.Collections.Generic.List[System.Object]
 
@@ -390,7 +390,7 @@ function GenerateList {
   return $listContent
 }
 
-function UpdateReadme {
+function GenerateReadmeContent {
   param (
     $Content
   )
@@ -420,13 +420,13 @@ This README can be updated with the `-UpdateReadme` flag:
   $mdContent.Add($Content)
   $mdContent.Add('```')
 
-  $mdContent | Out-File -FilePath .\README.md
+  return $mdContent
 }
 
 #endregion
 
-$output = GenerateList
+$output = GenerateListContent
 
 if ($UpdateReadme) {
-  UpdateReadme -content $output
+  GenerateReadmeContent -content $output | Out-File -FilePath .\README.md
 }
