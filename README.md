@@ -1,6 +1,18 @@
 # Winget Install Script
 
-Below is a list of applications I commonly use, All apps can be installed using the included `./install.ps1` script.
+Below is a list of applications I commonly use, this readme is designed so I can grab any item on the list and just copy and paste the command into the cli to install the application.
+
+All apps can be installed by running the `run.ps1` script with the `-InstallAll` flag:
+
+```ps1
+.\run.ps1 -InstallAll
+```
+
+This README can be updated with the `-UpdateReadme` flag:
+
+```ps1
+.\run.ps1 -UpdateReadme
+```
 
 ```ps1
 # Redistributes

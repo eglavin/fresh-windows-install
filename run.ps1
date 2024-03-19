@@ -2,7 +2,8 @@
 #
 
 param (
-  [switch]$ShowOutput
+  [switch]$InstallAll,
+  [switch]$UpdateReadme
 )
 
 #region Lists
@@ -333,9 +334,6 @@ $drivers = @{
   )
 }
 
-
-#############################################
-
 $allLists = @(
   $redistributes,
   $information,
@@ -349,78 +347,86 @@ $allLists = @(
   $drivers
 )
 
-#############################################
-
 #endregion
 
-function GetOutputFromLists {
+#region Functions
+
+function GenerateList {
   # Create dynamic array to hold output. See: https://stackoverflow.com/a/33156229
-  $out = New-Object System.Collections.Generic.List[System.Object]
+  $listContent = New-Object System.Collections.Generic.List[System.Object]
 
   ForEach ($list in $allLists) {
-    $out.Add("# $($list.Label)")
+    Write-Host "Processing $($list.Label):"
+    $listContent.Add("# $($list.Label)")
 
     ForEach ($group in $list.List) {
       # If app id is empty, add a blank line
       if ($null -eq $group.Id) {
-        $out.Add("")
+        $listContent.Add("")
         continue
       }
 
-      # Add app with options
-      if ($null -ne $group.Options) {
-        $out.Add("winget install --id=$($group.Id) -e $($group.Options);")
-        continue
+      if ($UpdateReadme) {
+        Write-Host "`t$($group.Id)"
+
+        # Add app with options
+        if ($null -ne $group.Options) {
+          $listContent.Add("winget install --id=$($group.Id) -e $($group.Options);")
+        }
+        else {
+          $listContent.Add("winget install --id=$($group.Id) -e;")
+        }
       }
 
-      $out.Add("winget install --id=$($group.Id) -e;")
+      if ($InstallAll) {
+        Write-Host "`tInstalling: $($group.Id)"
+        winget install --id=$($group.Id) -e $($group.Options);
+      }
     }
 
-    $out.Add("")
+    $listContent.Add("")
   }
 
-  return $out
+  return $listContent
 }
 
-function WriteOutToConsole {
+function UpdateReadme {
   param (
-    $out
+    $Content
   )
 
-  $out | ForEach-Object { Write-Host $_ }
+  $mdContent = New-Object System.Collections.Generic.List[System.Object]
+
+  $mdContent.Add(@'
+# Winget Install Script
+
+Below is a list of applications I commonly use, this readme is designed so I can grab any item on the list and just copy and paste the command into the cli to install the application.
+
+All apps can be installed by running the `run.ps1` script with the `-InstallAll` flag:
+
+```ps1
+.\run.ps1 -InstallAll
+```
+
+This README can be updated with the `-UpdateReadme` flag:
+
+```ps1
+.\run.ps1 -UpdateReadme
+```
+
+'@)
+
+  $mdContent.Add('```ps1')
+  $mdContent.Add($Content)
+  $mdContent.Add('```')
+
+  $mdContent | Out-File -FilePath .\README.md
 }
 
-function WriteOutToFile {
-  param (
-    $out
-  )
+#endregion
 
-  $out | Out-File -FilePath .\install.ps1
+$output = GenerateList
+
+if ($UpdateReadme) {
+  UpdateReadme -content $output
 }
-
-function WriteOutToMarkdown {
-  param (
-    $out
-  )
-
-  $mdOutput = New-Object System.Collections.Generic.List[System.Object]
-
-  $mdOutput.Add("# Winget Install Script`n")
-  $mdOutput.Add("Below is a list of applications I commonly use, All apps can be installed using the included ``./install.ps1`` script.`n")
-  $mdOutput.Add('```ps1')
-  $mdOutput.Add($out)
-  $mdOutput.Add('```')
-
-  $mdOutput | Out-File -FilePath .\README.md
-}
-
-#############################################
-
-
-$output = GetOutputFromLists
-
-if ($ShowOutput) {
-  WriteOutToConsole -out $output
-}
-WriteOutToFile -out $output
-WriteOutToMarkdown -out $output
