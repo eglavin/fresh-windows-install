@@ -355,7 +355,9 @@ $listContent = New-Object System.Collections.Generic.List[System.Object]
 $listContent.Add(@'
 # Winget Install Script
 
-Below is a list of applications I commonly use, this readme is designed so I can grab any item on the list and just copy and paste the command into the cli to install the application.
+This a list of applications I commonly use, this readme is designed so I can grab any item on the list and just copy and paste the command into the cli to install the application.
+
+## Usage
 
 All apps can be installed by running the `run.ps1` script with the `-InstallAll` flag:
 
@@ -369,13 +371,15 @@ This README can be updated with the `-UpdateReadme` flag:
 .\run.ps1 -UpdateReadme
 ```
 
+## Apps
+
 '@)
 
 ForEach ($list in $allLists) {
   Write-Host "Processing $($list.Label):"
 
   $listContent.Add(@"
-## $($list.Label)
+### $($list.Label)
 
 ``````ps1
 "@)

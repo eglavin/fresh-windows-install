@@ -1,6 +1,8 @@
 # Winget Install Script
 
-Below is a list of applications I commonly use, this readme is designed so I can grab any item on the list and just copy and paste the command into the cli to install the application.
+This a list of applications I commonly use, this readme is designed so I can grab any item on the list and just copy and paste the command into the cli to install the application.
+
+## Usage
 
 All apps can be installed by running the `run.ps1` script with the `-InstallAll` flag:
 
@@ -14,7 +16,9 @@ This README can be updated with the `-UpdateReadme` flag:
 .\run.ps1 -UpdateReadme
 ```
 
-## Redistributes
+## Apps
+
+### Redistributes
 
 ```ps1
 winget install --id=Microsoft.DirectX -e;
@@ -28,7 +32,7 @@ winget install --id=Microsoft.VCRedist.2015+.x86 -e;
 winget install --id=Microsoft.VCRedist.2015+.x64 -e;
 ```
 
-## Information
+### Information
 
 ```ps1
 winget install --id=ALCPU.CoreTemp -e;
@@ -42,7 +46,7 @@ winget install --id=TechPowerUp.GPU-Z -e;
 winget install --id=WinDirStat.WinDirStat -e;
 ```
 
-## Tools
+### Tools
 
 ```ps1
 winget install --id=7zip.7zip -e;
@@ -66,7 +70,7 @@ winget install --id=voidtools.Everything -e;
 winget install --id=WiresharkFoundation.Wireshark -e;
 ```
 
-## Productivity
+### Productivity
 
 ```ps1
 winget install --id=Audacity.Audacity -e;
@@ -82,7 +86,7 @@ winget install --id=TheDocumentFoundation.LibreOffice -e;
 winget install --id=XnSoft.XnViewMP -e;
 ```
 
-## Security
+### Security
 
 ```ps1
 winget install --id=Bitwarden.Bitwarden -e;
@@ -91,7 +95,7 @@ winget install --id=NordVPN.NordVPN -e;
 winget install --id=Twilio.Authy -e;
 ```
 
-## Platform
+### Platform
 
 ```ps1
 winget install --id=AdoptOpenJDK.OpenJDK.17 -e;
@@ -111,7 +115,7 @@ winget install --id=Rustlang.Rustup -e;
 winget install --id=zig.zig -e;
 ```
 
-## Development
+### Development
 
 ```ps1
 winget install --id=Atlassian.Sourcetree -e;
@@ -123,7 +127,7 @@ winget install --id=Postman.Postman -e;
 winget install --id=Git.Git -e -i;
 ```
 
-## Browsers
+### Browsers
 
 ```ps1
 winget install --id=Google.Chrome.Dev -e;
@@ -133,7 +137,7 @@ winget install --id=Mozilla.Firefox.DeveloperEdition -e;
 winget install --id=Mozilla.Firefox -e;
 ```
 
-## Entertainment
+### Entertainment
 
 ```ps1
 winget install --id=DOSBox.DOSBox -e;
@@ -146,7 +150,7 @@ winget install --id=Winamp.Winamp -e;
 winget install --id=XBMCFoundation.Kodi -e;
 ```
 
-## Drivers
+### Drivers
 
 ```ps1
 winget install --id=Logitech.GHUB -e;
