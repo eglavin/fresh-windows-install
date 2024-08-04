@@ -43,18 +43,19 @@ winget install --id=CrystalDewWorld.CrystalDiskInfo -e;
 winget install --id=CrystalDewWorld.CrystalDiskMark -e;
 winget install --id=NirSoft.BlueScreenView -e;
 winget install --id=TechPowerUp.GPU-Z -e;
-winget install --id=WinDirStat.WinDirStat -e;
 ```
 
 ### Tools
 
 ```ps1
 winget install --id=7zip.7zip -e;
+winget install --id=ajeetdsouza.zoxide -e;
 winget install --id=Armin2208.WindowsAutoNightMode -e;
 winget install --id=AutoHotkey.AutoHotkey -e;
 winget install --id=CodecGuide.K-LiteCodecPack.Standard -e;
 winget install --id=DebaucheeOpenSourceGroup.Barrier -e;
 winget install --id=File-New-Project.EarTrumpet -e;
+winget install --id=junegunn.fzf -e;
 winget install --id=Gyan.FFmpeg -e;
 winget install --id=JanDeDobbeleer.OhMyPosh -e;
 winget install --id=Microsoft.PowerShell -e;
@@ -64,9 +65,6 @@ winget install --id=NVAccess.NVDA -e;
 winget install --id=PuTTY.PuTTY -e;
 winget install --id=QL-Win.QuickLook -e;
 winget install --id=RARLab.WinRAR -e;
-winget install --id=RealVNC.VNCServer -e;
-winget install --id=RealVNC.VNCViewer -e;
-winget install --id=voidtools.Everything -e;
 winget install --id=WiresharkFoundation.Wireshark -e;
 ```
 
@@ -78,10 +76,6 @@ winget install --name="Affinity Designer 2" -e;
 winget install --name="Affinity Publisher 2" -e;
 winget install --id=Audacity.Audacity -e;
 winget install --id=BlenderFoundation.Blender -e;
-winget install --id=Figma.Figma -e;
-winget install --id=GIMP.GIMP -e;
-winget install --id=Icons8.Lunacy -e;
-winget install --id=Miro.Miro -e;
 winget install --id=NickeManarin.ScreenToGif -e;
 winget install --id=Notion.Notion -e;
 winget install --id=OBSProject.OBSStudio -e;
@@ -95,7 +89,6 @@ winget install --id=XnSoft.XnViewMP -e;
 winget install --id=Bitwarden.Bitwarden -e;
 winget install --id=Malwarebytes.Malwarebytes -e;
 winget install --id=NordVPN.NordVPN -e;
-winget install --id=Twilio.Authy -e;
 ```
 
 ### Platform
@@ -121,9 +114,7 @@ winget install --id=zig.zig -e;
 ### Development
 
 ```ps1
-winget install --id=Atlassian.Sourcetree -e;
 winget install --id=DBBrowserForSQLite.DBBrowserForSQLite -e;
-winget install --id=GitHub.GitHubDesktop -e;
 winget install --id=Neovim.Neovim -e;
 winget install --id=Postman.Postman -e;
 
@@ -149,14 +140,5 @@ winget install --id=Sky.SkyGo -e;
 winget install --id=Spotify.Spotify -e;
 winget install --id=Valve.Steam -e;
 winget install --id=VideoLAN.VLC -e;
-winget install --id=Winamp.Winamp -e;
-winget install --id=XBMCFoundation.Kodi -e;
-```
-
-### Drivers
-
-```ps1
-winget install --id=Logitech.GHUB -e;
-winget install --id=Corsair.iCUE.4 -e;
 ```
 
