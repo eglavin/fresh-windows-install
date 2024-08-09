@@ -41,23 +41,83 @@ $tools = @{
   Label = "Tools"
   List  = @(
     @{ Id = "7zip.7zip" },
-    @{ Id = "ajeetdsouza.zoxide" },
     @{ Id = "Armin2208.WindowsAutoNightMode" },
     @{ Id = "AutoHotkey.AutoHotkey" },
+    @{ Id = "Bitwarden.Bitwarden" },
     @{ Id = "CodecGuide.K-LiteCodecPack.Standard" },
     @{ Id = "DebaucheeOpenSourceGroup.Barrier" },
     @{ Id = "File-New-Project.EarTrumpet" },
-    @{ Id = "junegunn.fzf" },
     @{ Id = "Gyan.FFmpeg" },
-    @{ Id = "JanDeDobbeleer.OhMyPosh" },
-    @{ Id = "Microsoft.PowerShell" },
+    @{ Id = "Malwarebytes.Malwarebytes" },
     @{ Id = "Microsoft.Teams" },
+    @{ Id = "Neovim.Neovim" },
+    @{ Id = "NordVPN.NordVPN" },
     @{ Id = "Notepad++.Notepad++" },
-    @{ Id = "NVAccess.NVDA" },
     @{ Id = "PuTTY.PuTTY" },
-    @{ Id = "QL-Win.QuickLook" },
     @{ Id = "RARLab.WinRAR" },
     @{ Id = "WiresharkFoundation.Wireshark" }
+  )
+}
+
+$cli = @{
+  Label = "CLI"
+  List  = @(
+    @{ Id = "ajeetdsouza.zoxide" },
+    @{ Id = "BurntSushi.ripgrep.MSVC" },
+    @{ Id = "JanDeDobbeleer.OhMyPosh" },
+    @{ Id = "jqlang.jq" },
+    @{ Id = "junegunn.fzf" },
+    @{ Id = "Microsoft.PowerShell" },
+    @{ Id = "MikeFarah.yq" },
+    @{ Id = "Schniz.fnm" },
+    @{},
+    @{ Id = "Git.Git"; Options = "-i" }
+  )
+}
+
+$programmingLanguage = @{
+  Label = "Programming Languages"
+  List  = @(
+    @{ Id = "AdoptOpenJDK.OpenJDK.17" },
+    @{ Id = "Rustlang.Rustup" },
+    @{ Id = "zig.zig" }
+  )
+}
+
+$development = @{
+  Label = "Development"
+  List  = @(
+    @{ Id = "Amazon.AWSCLI" },
+    @{ Id = "ApacheFriends.Xampp.8.2" },
+    @{ Id = "Docker.DockerDesktop" },
+    @{ Id = "Google.AndroidStudio" },
+    @{ Id = "Kubernetes.kubectl" },
+    @{ Id = "Microsoft.AzureCLI" },
+    @{ Id = "Microsoft.AzureFunctionsCoreTools" },
+    @{ Id = "Microsoft.AzureStorageExplorer" },
+    @{ Id = "NVAccess.NVDA" },
+    @{ Id = "Postman.Postman" },
+    @{ Id = "RedHat.Podman" }
+  )
+}
+
+$database = @{
+  Label = "Database"
+  List  = @(
+    @{ Id = "DBBrowserForSQLite.DBBrowserForSQLite" },
+    @{ Id = "Microsoft.SQLServerManagementStudio" },
+    @{ Id = "MongoDB.DatabaseTools" }
+  )
+}
+
+$browsers = @{
+  Label = "Browsers"
+  List  = @(
+    @{ Id = "Google.Chrome.Dev" },
+    @{ Id = "Google.Chrome" },
+    @{ Id = "Microsoft.Edge.Dev" },
+    @{ Id = "Mozilla.Firefox.DeveloperEdition" },
+    @{ Id = "Mozilla.Firefox" }
   )
 }
 
@@ -77,58 +137,6 @@ $productivity = @{
   )
 }
 
-$security = @{
-  Label = "Security"
-  List  = @(
-    @{ Id = "Bitwarden.Bitwarden" },
-    @{ Id = "Malwarebytes.Malwarebytes" },
-    @{ Id = "NordVPN.NordVPN" }
-  )
-}
-
-$platform = @{
-  Label = "Platform"
-  List  = @(
-    @{ Id = "AdoptOpenJDK.OpenJDK.17" },
-    @{ Id = "Amazon.AWSCLI" },
-    @{ Id = "ApacheFriends.Xampp.8.2" },
-    @{ Id = "CoreyButler.NVMforWindows" },
-    @{ Id = "Docker.DockerDesktop" },
-    @{ Id = "Google.AndroidStudio" },
-    @{ Id = "Kubernetes.kubectl" },
-    @{ Id = "Microsoft.AzureCLI" },
-    @{ Id = "Microsoft.AzureFunctionsCoreTools" },
-    @{ Id = "Microsoft.AzureStorageExplorer" },
-    @{ Id = "Microsoft.SQLServerManagementStudio" },
-    @{ Id = "MongoDB.DatabaseTools" },
-    @{ Id = "RedHat.Podman" },
-    @{ Id = "Rustlang.Rustup" },
-    @{ Id = "zig.zig" }
-  )
-}
-
-$development = @{
-  Label = "Development"
-  List  = @(
-    @{ Id = "DBBrowserForSQLite.DBBrowserForSQLite" },
-    @{ Id = "Neovim.Neovim" },
-    @{ Id = "Postman.Postman" },
-    @{},
-    @{ Id      = "Git.Git"; Options = "-i" }
-  )
-}
-
-$browsers = @{
-  Label = "Browsers"
-  List  = @(
-    @{ Id = "Google.Chrome.Dev" },
-    @{ Id = "Google.Chrome" },
-    @{ Id = "Microsoft.Edge.Dev" },
-    @{ Id = "Mozilla.Firefox.DeveloperEdition" },
-    @{ Id = "Mozilla.Firefox" }
-  )
-}
-
 $entertainment = @{
   Label = "Entertainment"
   List  = @(
@@ -145,11 +153,12 @@ $allLists = @(
   $redistributes,
   $information,
   $tools,
-  $productivity,
-  $security,
-  $platform,
+  $cli,
   $development,
+  $database,
+  $programmingLanguage,
   $browsers,
+  $productivity,
   $entertainment
 )
 
