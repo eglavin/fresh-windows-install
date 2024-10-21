@@ -71,7 +71,9 @@ winget install --id=WiresharkFoundation.Wireshark -e;
 ```ps1
 winget install --id=ajeetdsouza.zoxide -e;
 winget install --id=BurntSushi.ripgrep.MSVC -e;
+winget install --id=dandavison.delta -e;
 winget install --id=JanDeDobbeleer.OhMyPosh -e;
+winget install --id=JesseDuffield.lazygit -e;
 winget install --id=jqlang.jq -e;
 winget install --id=junegunn.fzf -e;
 winget install --id=Microsoft.PowerShell -e;
