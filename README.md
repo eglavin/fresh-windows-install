@@ -64,6 +64,7 @@ winget install --id=Notepad++.Notepad++ -e;
 winget install --id=PuTTY.PuTTY -e;
 winget install --id=RARLab.WinRAR -e;
 winget install --id=WiresharkFoundation.Wireshark -e;
+winget install --id=yt-dlp.yt-dlp -e;
 ```
 
 ### CLI

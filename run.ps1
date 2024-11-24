@@ -55,7 +55,8 @@ $tools = @{
     @{ Id = "Notepad++.Notepad++" },
     @{ Id = "PuTTY.PuTTY" },
     @{ Id = "RARLab.WinRAR" },
-    @{ Id = "WiresharkFoundation.Wireshark" }
+    @{ Id = "WiresharkFoundation.Wireshark" },
+    @{ Id = "yt-dlp.yt-dlp" }
   )
 }
 
@@ -248,5 +249,5 @@ ForEach ($list in $allLists) {
 }
 
 if ($UpdateReadme) {
-  $listContent | Out-File -FilePath .\README.md
+  $listContent | Out-File -FilePath "$PSScriptRoot\README.md" -Encoding utf8
 }
