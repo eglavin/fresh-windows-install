@@ -2,7 +2,7 @@ param (
 	[switch] $Update
 )
 
-if (Test-Path -Path "$PSScriptRoot\PS-SFTA\SFTA.ps1" -PathType Leaf) {
+if ((Test-Path -Path "$PSScriptRoot\PS-SFTA\SFTA.ps1" -PathType Leaf) -eq $false) {
 	Write-Error "PS-SFTA not found. Please run 'git submodule update --init --recursive' to download it."
 	exit 1
 }
