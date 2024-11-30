@@ -1,0 +1,8 @@
+Applications\notepad++.exe|.cfg
+Applications\notepad++.exe|.inf
+Applications\notepad++.exe|.ini
+Applications\notepad++.exe|.jsp
+Applications\notepad++.exe|.log
+Applications\notepad++.exe|.scp
+Applications\notepad++.exe|.txt
+Applications\notepad++.exe|.wtx
