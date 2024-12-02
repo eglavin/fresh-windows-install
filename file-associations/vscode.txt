@@ -1,7 +1,9 @@
 Applications\Code.exe|.ahk
 Applications\Code.exe|.astro
+Applications\Code.exe|.code-snippets
 Applications\Code.exe|.env
 Applications\Code.exe|.example
+Applications\Code.exe|.htaccess
 Applications\Code.exe|.iml
 Applications\Code.exe|.kt
 Applications\Code.exe|.lock
@@ -21,6 +23,7 @@ VSCode.css|.css
 VSCode.dart|.dart
 VSCode.editorconfig|.editorconfig
 VSCode.gitattributes|.gitattributes
+VSCode.gitconfig|.gitconfig
 VSCode.gitignore|.gitignore
 VSCode.gradle|.gradle
 VSCode.h|.h
