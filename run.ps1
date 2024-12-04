@@ -193,6 +193,12 @@ This README can be updated with the `-Update` flag:
 .\run.ps1 -Update
 ```
 
+Install the most used apps without downloading the script:
+
+```ps1
+irm https://raw.githubusercontent.com/eglavin/fresh-windows-install/refs/heads/main/install-most-used.ps1 | iex
+```
+
 ## Apps
 
 '@)
