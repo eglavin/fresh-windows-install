@@ -10,10 +10,10 @@ All apps can be installed by running the `run.ps1` script with the `-InstallAll`
 .\run.ps1 -InstallAll
 ```
 
-This README can be updated with the `-UpdateReadme` flag:
+This README can be updated with the `-Update` flag:
 
 ```ps1
-.\run.ps1 -UpdateReadme
+.\run.ps1 -Update
 ```
 
 ## Apps
@@ -21,134 +21,137 @@ This README can be updated with the `-UpdateReadme` flag:
 ### Redistributes
 
 ```ps1
-winget install --id=Microsoft.DirectX -e;
-winget install --id=Microsoft.VCRedist.2005.x86 -e;
-winget install --id=Microsoft.VCRedist.2005.x64 -e;
-winget install --id=Microsoft.VCRedist.2008.x86 -e;
-winget install --id=Microsoft.VCRedist.2008.x64 -e;
-winget install --id=Microsoft.VCRedist.2013.x86 -e;
-winget install --id=Microsoft.VCRedist.2013.x64 -e;
-winget install --id=Microsoft.VCRedist.2015+.x86 -e;
-winget install --id=Microsoft.VCRedist.2015+.x64 -e;
+winget install --id=Microsoft.DirectX;
+winget install --id=Microsoft.VCRedist.2005.x86;
+winget install --id=Microsoft.VCRedist.2005.x64;
+winget install --id=Microsoft.VCRedist.2008.x86;
+winget install --id=Microsoft.VCRedist.2008.x64;
+winget install --id=Microsoft.VCRedist.2013.x86;
+winget install --id=Microsoft.VCRedist.2013.x64;
+winget install --id=Microsoft.VCRedist.2015+.x86;
+winget install --id=Microsoft.VCRedist.2015+.x64;
 ```
 
 ### Information
 
 ```ps1
-winget install --id=ALCPU.CoreTemp -e;
-winget install --id=AntibodySoftware.WizTree -e;
-winget install --id=CPUID.CPU-Z -e;
-winget install --id=CPUID.HWMonitor -e;
-winget install --id=CrystalDewWorld.CrystalDiskInfo -e;
-winget install --id=CrystalDewWorld.CrystalDiskMark -e;
-winget install --id=NirSoft.BlueScreenView -e;
-winget install --id=TechPowerUp.GPU-Z -e;
+winget install --id=ALCPU.CoreTemp;
+winget install --id=AntibodySoftware.WizTree;
+winget install --id=CPUID.CPU-Z;
+winget install --id=CPUID.HWMonitor;
+winget install --id=CrystalDewWorld.CrystalDiskInfo;
+winget install --id=CrystalDewWorld.CrystalDiskMark;
+winget install --id=NirSoft.BlueScreenView;
+winget install --id=TechPowerUp.GPU-Z;
 ```
 
 ### Tools
 
 ```ps1
-winget install --id=7zip.7zip -e;
-winget install --id=Armin2208.WindowsAutoNightMode -e;
-winget install --id=AutoHotkey.AutoHotkey -e;
-winget install --id=Bitwarden.Bitwarden -e;
-winget install --id=CodecGuide.K-LiteCodecPack.Standard -e;
-winget install --id=DebaucheeOpenSourceGroup.Barrier -e;
-winget install --id=File-New-Project.EarTrumpet -e;
-winget install --id=Gyan.FFmpeg -e;
-winget install --id=Malwarebytes.Malwarebytes -e;
-winget install --id=Microsoft.Teams -e;
-winget install --id=Neovim.Neovim -e;
-winget install --id=NordVPN.NordVPN -e;
-winget install --id=Notepad++.Notepad++ -e;
-winget install --id=PuTTY.PuTTY -e;
-winget install --id=RARLab.WinRAR -e;
-winget install --id=WiresharkFoundation.Wireshark -e;
-winget install --id=yt-dlp.yt-dlp -e;
+winget install --id=Armin2208.WindowsAutoNightMode;
+winget install --id=Bitwarden.Bitwarden;
+winget install --id=Giorgiotani.Peazip;
+winget install --id=Malwarebytes.Malwarebytes;
+winget install --id=Notepad++.Notepad++;
+
+winget install --id=Alacritty.Alacritty;
+winget install --id=AutoHotkey.AutoHotkey;
+winget install --id=Devolutions.RemoteDesktopManager;
+winget install --id=File-New-Project.EarTrumpet;
+winget install --id=Iterate.Cyberduck;
+winget install --id=Microsoft.Teams;
+winget install --id=Microsoft.VisualStudioCode --force --scope machine --override '/SILENT /SP- /MERGETASKS="!runcode,!desktopicon,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath"';
+winget install --id=Neovim.Neovim;
+winget install --id=NordVPN.NordVPN;
+winget install --id=SublimeHQ.SublimeText.4;
+winget install --id=WiresharkFoundation.Wireshark;
 ```
 
 ### CLI
 
 ```ps1
-winget install --id=ajeetdsouza.zoxide -e;
-winget install --id=BurntSushi.ripgrep.MSVC -e;
-winget install --id=dandavison.delta -e;
-winget install --id=JanDeDobbeleer.OhMyPosh -e;
-winget install --id=JesseDuffield.lazygit -e;
-winget install --id=jqlang.jq -e;
-winget install --id=junegunn.fzf -e;
-winget install --id=Microsoft.PowerShell -e;
-winget install --id=MikeFarah.yq -e;
-winget install --id=Schniz.fnm -e;
+winget install --id=Microsoft.PowerShell;
+winget install --id=JanDeDobbeleer.OhMyPosh;
+winget install --id=Git.Git;
+winget install --id=BurntSushi.ripgrep.MSVC;
+winget install --id=junegunn.fzf;
+winget install --id=ajeetdsouza.zoxide;
+winget install --id=Schniz.fnm;
 
-winget install --id=Git.Git -e -i;
+winget install --id=dandavison.delta;
+winget install --id=Gyan.FFmpeg;
+winget install --id=JesseDuffield.lazygit;
+winget install --id=jqlang.jq;
+winget install --id=MikeFarah.yq;
+winget install --id=yt-dlp.yt-dlp;
 ```
 
 ### Development
 
 ```ps1
-winget install --id=Amazon.AWSCLI -e;
-winget install --id=ApacheFriends.Xampp.8.2 -e;
-winget install --id=Docker.DockerDesktop -e;
-winget install --id=Google.AndroidStudio -e;
-winget install --id=Kubernetes.kubectl -e;
-winget install --id=Microsoft.AzureCLI -e;
-winget install --id=Microsoft.AzureFunctionsCoreTools -e;
-winget install --id=Microsoft.AzureStorageExplorer -e;
-winget install --id=NVAccess.NVDA -e;
-winget install --id=Postman.Postman -e;
-winget install --id=RedHat.Podman -e;
+winget install --id=Amazon.AWSCLI;
+winget install --id=Docker.DockerDesktop;
+winget install --id=Google.AndroidStudio;
+winget install --id=Microsoft.AzureCLI;
+winget install --id=Microsoft.AzureFunctionsCoreTools;
+winget install --id=Microsoft.AzureStorageExplorer;
+winget install --id=NVAccess.NVDA;
+winget install --id=Postman.Postman;
+winget install --id=RedHat.Podman;
 ```
 
 ### Database
 
 ```ps1
-winget install --id=DBBrowserForSQLite.DBBrowserForSQLite -e;
-winget install --id=Microsoft.SQLServerManagementStudio -e;
-winget install --id=MongoDB.DatabaseTools -e;
+winget install --id=DBBrowserForSQLite.DBBrowserForSQLite;
+winget install --id=Microsoft.SQLServerManagementStudio;
+winget install --id=MongoDB.DatabaseTools;
 ```
 
 ### Programming Languages
 
 ```ps1
-winget install --id=AdoptOpenJDK.OpenJDK.17 -e;
-winget install --id=Rustlang.Rustup -e;
-winget install --id=zig.zig -e;
+winget install --id=EclipseAdoptium.Temurin.23.JDK;
+winget install --id=Rustlang.Rustup;
+winget install --id=zig.zig;
 ```
 
 ### Browsers
 
 ```ps1
-winget install --id=Google.Chrome.Dev -e;
-winget install --id=Google.Chrome -e;
-winget install --id=Microsoft.Edge.Dev -e;
-winget install --id=Mozilla.Firefox.DeveloperEdition -e;
-winget install --id=Mozilla.Firefox -e;
+winget install --id=Mozilla.Firefox;
+
+winget install --id=Google.Chrome.Dev;
+winget install --id=Google.Chrome;
+winget install --id=Microsoft.Edge.Dev;
+winget install --id=Mozilla.Firefox.DeveloperEdition;
+winget install --id=Zen-Team.Zen-Browser;
 ```
 
 ### Productivity
 
 ```ps1
-winget install --name="Affinity Photo 2" -e;
-winget install --name="Affinity Designer 2" -e;
-winget install --name="Affinity Publisher 2" -e;
-winget install --id=Audacity.Audacity -e;
-winget install --id=BlenderFoundation.Blender -e;
-winget install --id=NickeManarin.ScreenToGif -e;
-winget install --id=Notion.Notion -e;
-winget install --id=OBSProject.OBSStudio -e;
-winget install --id=TheDocumentFoundation.LibreOffice -e;
-winget install --id=XnSoft.XnViewMP -e;
+winget install --id=Audacity.Audacity;
+winget install --id=BlenderFoundation.Blender;
+winget install --id=NickeManarin.ScreenToGif;
+winget install --id=Notion.Notion;
+winget install --id=OBSProject.OBSStudio;
+winget install --id=TheDocumentFoundation.LibreOffice;
+winget install --id=XnSoft.XnViewMP;
+winget install --name="Affinity Designer 2";
+winget install --name="Affinity Photo 2";
+winget install --name="Affinity Publisher 2";
 ```
 
 ### Entertainment
 
 ```ps1
-winget install --id=DOSBox.DOSBox -e;
-winget install --id=Plex.Plex -e;
-winget install --id=Sky.SkyGo -e;
-winget install --id=Spotify.Spotify -e;
-winget install --id=Valve.Steam -e;
-winget install --id=VideoLAN.VLC -e;
+winget install --id=VideoLAN.VLC;
+
+winget install --id=DOSBox.DOSBox;
+winget install --id=Plex.Plex;
+winget install --id=Sky.SkyGo;
+winget install --id=Spotify.Spotify;
+winget install --id=Valve.Steam;
 ```
 
