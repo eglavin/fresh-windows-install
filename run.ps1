@@ -171,74 +171,42 @@ $allLists = @(
 #endregion
 
 # Create dynamic array to hold output. See: https://stackoverflow.com/a/33156229
-$listContent = New-Object System.Collections.Generic.List[System.Object]
+$ListContent = New-Object System.Collections.Generic.List[System.Object]
 $Priority1Items = New-Object System.Collections.Generic.List[System.Object]
-
-$listContent.Add(@'
-# Winget Install Script
-
-This a list of applications I commonly use, this readme is designed so I can grab any item on the list and just copy and paste the command into the cli to install the application.
-
-## Usage
-
-All apps can be installed by running the `run.ps1` script with the `-InstallAll` flag:
-
-```ps1
-.\run.ps1 -InstallAll
-```
-
-This README can be updated with the `-Update` flag:
-
-```ps1
-.\run.ps1 -Update
-```
-
-Install the most used apps without downloading the script:
-
-```ps1
-irm https://raw.githubusercontent.com/eglavin/fresh-windows-install/refs/heads/main/install-most-used.ps1 | iex
-```
-
-## Apps
-
-'@)
 
 ForEach ($list in $allLists) {
   Write-Host "Processing $($list.Label):"
 
-  $listContent.Add(@"
+  $ListContent.Add(@"
+
 ### $($list.Label)
 
 ``````ps1
 "@)
 
   ForEach ($group in $list.List) {
-    # If app id is empty, add a blank line
+    # If app id and name are empty, add a blank line
     if ($null -eq $group.Id -and $null -eq $group.Name) {
-      $listContent.Add("")
+      $ListContent.Add("")
       continue
     }
 
     if ($Update) {
-      Write-Host "`t$($group.Id ? $group.Id : $group.Name)"
+      Write-Host "  $($group.Id ? $group.Id : $group.Name)"
 
-      $installScript = "winget install "
-
-      # Add by id
+      $InstallScript = "winget install "
       if ($null -ne $group.Id) {
-        $installScript += "--id=$($group.Id)"
+        $InstallScript += "--id=$($group.Id)"
       }
-      # or add by name
       elseif ($null -ne $group.Name) {
-        $installScript += "--name=`"$($group.Name)`""
+        $InstallScript += "--name=`"$($group.Name)`""
       }
 
-      # Add options
       if ($null -ne $group.Options) {
-        $installScript += " $($group.Options)"
+        $InstallScript += " $($group.Options)"
       }
 
-      $listContent.Add($installScript + ";")
+      $ListContent.Add($InstallScript + ";")
 
       if ($group.Priority -eq 1) {
         $Priority1Items.Add($group.Id)
@@ -246,7 +214,7 @@ ForEach ($list in $allLists) {
     }
 
     if ($InstallAll) {
-      Write-Host "`tInstalling: $($group.Id ? $group.Id : $group.Name)"
+      Write-Host "  Installing: $($group.Id ? $group.Id : $group.Name)"
 
       if ($group.Id) {
         winget install --id=$($group.Id) $($group.Options);
@@ -257,15 +225,15 @@ ForEach ($list in $allLists) {
     }
   }
 
-  $listContent.Add(@"
+  $ListContent.Add(@"
 ``````
-
 "@)
 }
 
 
 if ($Update) {
-  @"
+  # Create a script to install the most used apps
+  $MostUsedInstallScript = @"
 `$ItemsToInstall = @(
   $($Priority1Items | ForEach-Object { "`"$_`"" } | Join-String -Separator ",`n  ")
 )
@@ -274,7 +242,19 @@ if ($Update) {
   Write-Host "Installing: `$_"
   winget install --id=`$_
 }
-"@ | Out-File -FilePath "$PSScriptRoot\install-most-used.ps1" -Encoding utf8
+"@
 
-  $listContent | Out-File -FilePath "$PSScriptRoot\README.md" -Encoding utf8
+  [System.IO.File]::WriteAllLines("$PSScriptRoot\install-most-used.ps1", $MostUsedInstallScript)
+
+
+  # Update the README.md file
+  $AppsMarker = "<!-- APPS LIST MARKER -->"
+
+  $OldContent = [System.IO.File]::ReadAllText("$PSScriptRoot\README.md")
+  $OldContentIndex = $OldContent.IndexOf($AppsMarker) + $AppsMarker.Length + 1
+
+  $NewContent = $OldContent.Substring(0, $OldContentIndex)
+  $NewContent += ($ListContent | Join-String -Separator "`n") + "`n"
+
+  [System.IO.File]::WriteAllText("$PSScriptRoot\README.md", $NewContent)
 }

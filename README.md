@@ -1,4 +1,4 @@
-# Winget Install Script
+# Fresh Windows Install Scripts
 
 This a list of applications I commonly use, this readme is designed so I can grab any item on the list and just copy and paste the command into the cli to install the application.
 
@@ -23,6 +23,7 @@ irm https://raw.githubusercontent.com/eglavin/fresh-windows-install/refs/heads/m
 ```
 
 ## Apps
+<!-- APPS LIST MARKER -->
 
 ### Redistributes
 
@@ -160,4 +161,3 @@ winget install --id=Sky.SkyGo;
 winget install --id=Spotify.Spotify;
 winget install --id=Valve.Steam;
 ```
-
