@@ -52,6 +52,7 @@ $tools = @{
     @{ Id = "File-New-Project.EarTrumpet" },
     @{ Id = "Iterate.Cyberduck" },
     @{ Id = "Microsoft.Teams" },
+    @{ Id = "Microsoft.PowerToys" },
     @{ Id = "Microsoft.VisualStudioCode"; Options = "--force --scope machine --override '/SILENT /SP- /MERGETASKS=`"!runcode,!desktopicon,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath`"'" },
     @{ Id = "Neovim.Neovim" },
     @{ Id = "NordVPN.NordVPN" },

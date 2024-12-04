@@ -67,6 +67,7 @@ winget install --id=Devolutions.RemoteDesktopManager;
 winget install --id=File-New-Project.EarTrumpet;
 winget install --id=Iterate.Cyberduck;
 winget install --id=Microsoft.Teams;
+winget install --id=Microsoft.PowerToys;
 winget install --id=Microsoft.VisualStudioCode --force --scope machine --override '/SILENT /SP- /MERGETASKS="!runcode,!desktopicon,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath"';
 winget install --id=Neovim.Neovim;
 winget install --id=NordVPN.NordVPN;
