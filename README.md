@@ -81,16 +81,17 @@ winget install --id=WiresharkFoundation.Wireshark;
 winget install --id=Microsoft.PowerShell;
 winget install --id=JanDeDobbeleer.OhMyPosh;
 winget install --id=Git.Git;
+winget install --id=dandavison.delta;
 winget install --id=BurntSushi.ripgrep.MSVC;
 winget install --id=junegunn.fzf;
 winget install --id=ajeetdsouza.zoxide;
-winget install --id=Schniz.fnm;
+winget install --id=jdx.mise;
 
-winget install --id=dandavison.delta;
 winget install --id=Gyan.FFmpeg;
 winget install --id=JesseDuffield.lazygit;
 winget install --id=jqlang.jq;
 winget install --id=MikeFarah.yq;
+winget install --id=Schniz.fnm;
 winget install --id=yt-dlp.yt-dlp;
 ```
 

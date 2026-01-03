@@ -67,16 +67,17 @@ $cli = @{
     @{ Id = "Microsoft.PowerShell"; Priority = 1 },
     @{ Id = "JanDeDobbeleer.OhMyPosh"; Priority = 1 },
     @{ Id = "Git.Git"; Priority = 1 },
+    @{ Id = "dandavison.delta"; Priority = 1 },
     @{ Id = "BurntSushi.ripgrep.MSVC"; Priority = 1 },
     @{ Id = "junegunn.fzf"; Priority = 1 },
     @{ Id = "ajeetdsouza.zoxide"; Priority = 1 },
-    @{ Id = "Schniz.fnm"; Priority = 1 },
+    @{ Id = "jdx.mise"; Priority = 1 },
     @{},
-    @{ Id = "dandavison.delta" },
     @{ Id = "Gyan.FFmpeg" },
     @{ Id = "JesseDuffield.lazygit" },
     @{ Id = "jqlang.jq" },
     @{ Id = "MikeFarah.yq" },
+    @{ Id = "Schniz.fnm" },
     @{ Id = "yt-dlp.yt-dlp" }
   )
 }

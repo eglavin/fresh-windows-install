@@ -24,10 +24,11 @@ $ItemsToInstall = @(
   "Microsoft.PowerShell",
   "JanDeDobbeleer.OhMyPosh",
   "Git.Git",
+  "dandavison.delta",
   "BurntSushi.ripgrep.MSVC",
   "junegunn.fzf",
   "ajeetdsouza.zoxide",
-  "Schniz.fnm",
+  "jdx.mise",
   "Mozilla.Firefox",
   "VideoLAN.VLC"
 )
